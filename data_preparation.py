@@ -27,6 +27,7 @@ for i in os.listdir('/home/timur/Documents/Projects/SETI/data/train/1/'):
         else:
             shutil.move(f'/home/timur/Documents/Projects/SETI/data/train/1/{i}',
                         f'/home/timur/Documents/Projects/SETI/data/train/1/{i}')
+
 print(len(os.listdir('/home/timur/Documents/Projects/SETI/data/train/1/')))
 print(len(os.listdir('/home/timur/Documents/Projects/SETI/data/train/0/')))
 print(len(os.listdir('/home/timur/Documents/Projects/SETI/data/test/')))
@@ -40,9 +41,8 @@ def testGenerator(test_path, num_image, target_size=(150, 150)):
         img = np.reshape(img, (1,) + img.shape)
         yield img
 
-train_datagen = ImageDataGenerator(rescale=1.0/255)
-test_datagen = ImageDataGenerator(rescale=1.0/255)
 
+train_datagen = ImageDataGenerator(rescale=1.0/255)
 train_generator = train_datagen.flow_from_directory(
         '/home/timur/Documents/Projects/SETI/data/train/',
         target_size=(150, 150),
