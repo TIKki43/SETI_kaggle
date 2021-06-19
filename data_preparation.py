@@ -56,3 +56,5 @@ train_generator = train_datagen.flow_from_directory(
         batch_size=10)
 
 test_generator = testGenerator('/home/timur/Documents/Projects/SETI/data/test/', 3, (150, 150, 3))
+
+# print(len(train_generator))
